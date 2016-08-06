@@ -1,6 +1,0 @@
-Tool Numbers(List) Used By Program:
-F:\Desktop\Pea Pod Middle Bottom Right\f1\f1_Kuka_APT2.tap
- 
-     Base Number Used:  1
- 
-  1st Tool Number Used:  3

@@ -2,7 +2,7 @@ package ui
 
 import java.io.File
 
-import parser.{NewParser, Parser}
+import parser.{KRLParser, Parser}
 
 import scalafx.event.ActionEvent
 import scalafx.scene.control.{Button, TextArea}
@@ -30,7 +30,7 @@ class WindowContainer extends BorderPane {
           Console.writeln(chosenFile.getAbsolutePath + " chosen")
           if(chosenFile.getName.split('.')(1) == "SRC") {
             //Parser.parse(chosenFile)
-            new NewParser(chosenFile)
+            new KRLParser(chosenFile)
           }else{
             Console.writeln("Error! File: " + chosenFile.getName + " is not a toolpath!")
             Console.writeln("Hint: The file should have main in the name and end with .SRC")
