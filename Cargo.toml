@@ -1,0 +1,6 @@
+[package]
+name = "krl_rust"
+version = "0.1.0"
+authors = ["Mnenmenth Alkaborin <mnenmenth@gmail.com>"]
+
+[dependencies]

@@ -1,5 +1,2 @@
-out
-classes
-.idea/
-project
 target
+Cargo.lock
