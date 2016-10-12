@@ -13,7 +13,7 @@ import scala.io.Source
   */
 
 object Parser {
-  def parse(mainToolpath: File): Unit ={
+  def parse(mainToolpath: File): Unit = {
     new Thread(){override def run(): Unit ={
       new KRLParser(mainToolpath)
     }}
@@ -41,11 +41,11 @@ class KRLParser(mainToolpath: File) {
   }
   toolpaths = toolpaths.take(toolpaths.length-1)
 
-  var groups = List[List[Toolpath]]()
-  val groupNums = Math.ceil(toolpaths.length/8).toInt
-
-  ui.Console.writeln(s"Breaking toolpath into $groupNums groups")
-  for (i: Int <- 1 to groupNums) groups = groups:+toolpaths.slice((i-1)*8, i*8)
+  val groups = toolpaths.iterator.grouped(8).toList
+  //val groupNums = Math.ceil(toolpaths.length/8).toInt
+  //toolpaths.iterator.grouped(8).toList
+  //ui.Console.writeln(s"Breaking toolpath into $groupNums groups")
+  //for (i: Int <- 1 to groupNums) groups = groups:+toolpaths.slice((i-1)*8, i*8)
 
   ui.Console.writeln("Adding SetRPM(0) to the end of the last file of each group")
   groups.foreach { g =>
